@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Events</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: chocolate;
+        color: beige;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mouse Events</h1>
+    <button id="doubleBtn">Double Click</button>
+    <button id="mousedwn">Mouse Down</button>
+    <button id="mouseup">Mouse Up</button>
+    <div id="mouse-move">Mouse Move</div>
+    <div id="mouse-over">Hover Over Me!</div>
+    <div id="mouse-out">Leave Me Alone!</div>
+    <script>
+      const dblBtn = document.querySelector("#doubleBtn");
+      dblBtn.addEventListener("dblclick", () => {
+        alert("Double Clicked!");
+      });
+      const mouseDown = document.querySelector("#mousedwn");
+      mouseDown.addEventListener("mousedown", () => {
+        alert("Mouse Down Event.");
+      });
+      const mouseUp = document.querySelector("#mouseup");
+      mouseUp.addEventListener("mouseup", () => {
+        alert("Mouse Up Event.");
+      });
+      const mouseMove = document.querySelector("#mouse-move");
+      mouseMove.addEventListener("mousemove", () => {
+        alert("You moved the mouse!");
+      });
+      const mouseOver = document.querySelector("#mouse-over");
+      mouseOver.addEventListener("mouseover", () => {
+        alert("Mouse entered this element!");
+      });
+      const mouseOut = document.querySelector("#mouse-out");
+      mouseOut.addEventListener("mouseout", () => {
+        alert("Thank you for leaving me alone!");
+      });
+    </script>
+  </body>
+</html>

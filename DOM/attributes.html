@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes</title>
+    <style>
+        #box{
+            height:250px;
+            width: 100px;
+            background-color: dodgerblue;
+            color: white;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">This is a div.
+        <ul>
+            List
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+    <p class="para">I'm a paragraph.</p>
+    <script>
+        let div =document.querySelector("div");
+        let id= div.getAttribute("id");
+        let paragraph=document.querySelector("p");
+        paragraph.setAttribute("class","newclass");
+        paragraph.remove()
+        div.style.backgroundColor="green";
+        let newBtn=document.createElement("button");
+        newBtn.innerText="Click Me!";
+        div.after(newBtn);    
+        let heading=document.createElement("h1");
+        heading.innerText="Hi! I'm JavaScript."
+        document.querySelector("body").prepend(heading);    
+    </script>
+</body>
+</html>

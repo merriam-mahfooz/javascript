@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app=document.getElementById('app');
+        //header
+        const heading=document.createElement('h1');
+        heading.textContent="Todo App";
+        app.appendChild(heading);
+        //input
+        const input=document.createElement("input");
+        input.type="text";
+        input.placeholder="Enter your task";
+        input.id="todoInput";
+        app.appendChild(input);
+        //inputButton
+        const addButton=document.createElement("button");
+        addButton.textContent="Add";
+        addButton.style.cursor='pointer';
+        addButton.id="addBtn";
+        app.appendChild(addButton);
+
+        const addBtn=document.getElementById("addBtn");
+        addBtn.addEventListener('click',addTodoItem);
+
+        function addTodoItem() {
+            const todoInput=document.getElementById("todoInput");
+            const todoText=todoInput.value.trim();
+            if(todoText===""){
+                alert("Please enter a task");
+                return;
+            }
+            const todoList=document.getElementById("todoList");
+            if(!todoList){
+                const ul=document.createElement("ul");
+                ul.id="todoList";
+                app.appendChild(ul);
+            }
+            const li=document.createElement("li");
+            li.textContent=todoText; 
+            todoList.appendChild(li);
+            todoInput.value="";
+        }
+        function deleteTodoItem(event) {
+            console.log("Delete button clicked");
+            if(event.target.classList.contains("deleteBtn")){
+                const li=event.target.parentElement;
+                li.remove();
+            }
+        }
+    </script>
+</body>
+</html>

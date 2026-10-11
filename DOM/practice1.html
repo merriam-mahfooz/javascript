@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+    <style>
+        .box{
+            height: 45px;
+            width: 455px;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello JavaScript</h2>
+    <div class="box">Sol</div>
+    <div class="box">Nara</div>
+    <div class="box">Wonderland</div>
+    <script>
+        let heading=document.querySelector("h2");
+        heading.innerText=heading.innerText+" Merriam is learning JS.";
+        let divs=document.querySelectorAll(".box");
+        let idx=1;
+        for(let div of divs){
+            div.innerText= div.innerText+ ` box ${idx}`;
+            idx++;
+        }
+    </script>
+</body>
+</html>

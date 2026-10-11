@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Event</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Enter your username">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let  form = document.getElementById("myForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            let username = form.elements["username"].value;
+            console.log("Form submitted with username: " + username);
+        });
+    </script>
+</body>
+</html>

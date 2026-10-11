@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event JS</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+        }
+</style>
+</head>
+<body>
+    <button id="btn1">Click Me!</button>
+    <div>This is a box</div>
+    <script>
+        const btn1=document.getElementById("btn1");
+        // btn1.onclick=(event)=>{
+        //     console.log(event.type);
+        //     console.log(event.target);
+        // }
+        btn1.addEventListener("click",()=>{
+            console.log("button1 was clicked.Handler-1")
+        })
+        btn1.addEventListener("click",()=>{
+            console.log("button1 was clicked.Handler-2")
+        })
+        const handler3=()=>{
+            console.log("button1 was clicked.Handler-3")
+        }
+        btn1.addEventListener("click",handler3)
+        btn1.addEventListener("click",()=>{
+            console.log("button1 was clicked.Handler-4")
+        })
+        btn1.removeEventListener("click",handler3)
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Objects</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+    <input type="text" id="input-object" placeholder="Enter your name">
+    <script>
+        const button=document.querySelector("#myButton");
+        button.addEventListener("click",(event)=>{
+            console.log(`event type: ${event.type}`);
+            console.log(`event type: ${event.target}`);
+        })
+        const input=document.getElementById("input-object");
+        input.addEventListener("keydown",(event)=>{
+            // console.log(`Key Presed: ${event.key}`);
+            console.log(input.value);
+        })
+    </script>
+</body>
+</html>

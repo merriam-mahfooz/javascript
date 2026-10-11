@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <link rel="stylesheet" href="toggleBtn.css">
+</head>
+<body>
+    <button>Change Mode</button>
+    <p>Hi! I'm Merriam</p>
+    <script>
+        const modeBtn=document.querySelector("button");
+        let currentMode="light";
+        const body=document.querySelector("body");
+
+        modeBtn.addEventListener("click",()=>{
+            if(currentMode==="light"){
+                currentMode="dark";
+                // body.style.backgroundColor="black";
+                body.classList.add("dark");
+                body.classList.remove("light");
+            }
+            else{
+                currentMode="light";
+                // body.style.backgroundColor="white";
+                body.classList.add("light");
+                body.classList.remove("dark");
+            }
+        })
+        console.log(currentMode);
+    </script>
+    
+</body>
+</html>

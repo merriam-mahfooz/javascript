@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Basics</title>
+  </head>
+  <body>
+    <button id="btn">Click me!</button>
+    <button onclick="alert('Inline Event Handling')">Inline Event</button>
+    <button id="handler-btn">Event Handler</button>
+    <script>
+      const button = document.querySelector("#btn");
+      button.addEventListener("click", () => {
+        alert("Welcome!");
+      });
+      const handlerBtn=document.querySelector("#handler-btn");
+      handlerBtn.onclick=()=>{
+        alert('first');
+      }
+      handlerBtn.onclick=()=>{
+        alert('Second');
+      }
+    </script>
+  </body>
+</html>

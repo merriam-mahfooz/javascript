@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <input type="text" id="key-down" placeholder="Type something...">
+    <input type="text" id="key-up" placeholder="Type something...">
+
+    <script>
+        const keyDown=document.querySelector("#key-down");
+        keyDown.addEventListener("keydown",(event)=>{
+            console.log(`Key down: ${event.key}`);
+        });
+
+        const keyUp=document.querySelector("#key-up");
+        keyUp.addEventListener("keyup",(event)=>{
+            console.log(`Key up: ${event.key}`);
+            alert(`You released the key: ${event.key}`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>Hello</p>
+        <p>Goodbye</p>
+    </div>
+    <p id="parag">I am </p>
+    <script>
+        let div=document.querySelector("#box");
+        let newP=document.createElement("p");
+        newP.innerText="I am a new paragraph";
+        div.appendChild(newP);
+        let para=div.querySelectorAll("p");
+        console.log(para);
+        div.removeChild(para[1]);
+        let p=document.createElement("p");
+        let para1=document.querySelector("#parag");
+        p.innerText="span";
+        para1.appendChild(p);
+        para1.removeChild(p);
+    </script>
+</body>
+</html>
