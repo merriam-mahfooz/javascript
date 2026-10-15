@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Objects</title>
+    <style>
+        div{
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
     <button id="myButton">Click Me</button>
     <input type="text" id="input-object" placeholder="Enter your name">
+    <div id="mouse">
+        <h3>Click on me!</h3>
+    </div>
     <script>
         const button=document.querySelector("#myButton");
         button.addEventListener("click",(event)=>{
@@ -16,8 +26,16 @@
         })
         const input=document.getElementById("input-object");
         input.addEventListener("keydown",(event)=>{
-            // console.log(`Key Presed: ${event.key}`);
-            console.log(input.value);
+            console.log(`Key Presed: ${event.key}`);
+            console.log(event.code);
+            console.log(event.repeat);
+        })
+        const mouseEvents=document.querySelector("#mouse");
+        mouseEvents.addEventListener("click",(event)=>{
+            console.log(event.clientX);
+            console.log(event.clientY);
+            console.log(event.button);
+            console.log(event.buttons);
         })
     </script>
 </body>
