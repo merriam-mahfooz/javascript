@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties</title>
+    <style>
+        #grandparent{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="grandparent">
+        <div id="parent">
+            <button id="child">Click</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("click",(event)=>{
+            console.log(event.target);
+            console.log(event.target.parentElement.id);
+            console.log(event.target.parentElement.parentElement?.parentElement);
+            console.log(event.target.closest("#grandparent"));
+        })
+    </script>
+</body>
+</html>
