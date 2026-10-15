@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="shopping-list">
+      <div class="item">
+        <span>Milk</span>
+        <button class="remove">Remove</button>
+      </div>
+      <div class="item">
+        <span>Bread</span>
+        <button class="remove">Remove</button>
+      </div>
+      <div class="item">
+        <span>Eggs</span>
+        <button class="remove">Remove</button>
+      </div>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll(".remove");
+      buttons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.target.closest(".item").remove();
+        });
+      });
+    </script>
+  </body>
+</html>
